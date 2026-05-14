@@ -89,19 +89,23 @@ export function createSqliteWasmRemote(
     },
 
     async createSavepoint(name: string): Promise<void> {
-      db.exec(`SAVEPOINT ${name}`);
+      db.exec(`SAVEPOINT ${quoteIdent(name)}`);
     },
 
     async rollbackToSavepoint(name: string): Promise<void> {
-      db.exec(`ROLLBACK TO SAVEPOINT ${name}`);
+      db.exec(`ROLLBACK TO SAVEPOINT ${quoteIdent(name)}`);
     },
 
     async releaseSavepoint(name: string): Promise<void> {
-      db.exec(`RELEASE SAVEPOINT ${name}`);
+      db.exec(`RELEASE SAVEPOINT ${quoteIdent(name)}`);
     },
 
     async close(): Promise<void> {
       db.close();
     },
   };
+}
+
+function quoteIdent(name: string): string {
+  return `"${name.replace(/"/g, '""')}"`;
 }
