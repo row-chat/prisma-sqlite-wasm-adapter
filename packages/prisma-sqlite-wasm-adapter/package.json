@@ -1,6 +1,6 @@
 {
   "name": "@row-chat/prisma-sqlite-wasm-adapter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./src/prisma-sqlite-wasm-adapter.ts",
