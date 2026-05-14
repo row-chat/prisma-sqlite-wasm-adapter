@@ -1,6 +1,6 @@
-import { PrismaClient } from '@prisma/client';
 import assert from 'node:assert/strict';
 import { beforeEach, describe, it } from 'node:test';
+import { PrismaClient } from '../prisma/generated/client/index.js';
 
 type Client = PrismaClient;
 

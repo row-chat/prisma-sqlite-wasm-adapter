@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.tsbuildinfo
 *.local
+packages/*/prisma/generated/
 
 # Editor directories and files
 .vscode/*

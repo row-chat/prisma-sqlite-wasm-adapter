@@ -1,0 +1,27 @@
+{
+  "name": "@row-chat/pglite-db",
+  "version": "1.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./prisma/generated/client/index.js",
+    "./edge": "./prisma/generated/client/edge.js"
+  },
+  "scripts": {
+    "pglite:server:bare": "pglite-server --extensions pgcrypto,@electric-sql/pglite/contrib/uuid_ossp:uuid_ossp --db=memory://",
+    "pglite:server": "tsx scripts/server.ts",
+    "prisma:pull": "tsx scripts/prisma-pull.ts",
+    "prisma:pull:bare": "prisma db pull --force --url postgresql://postgres:postgres@127.0.0.1:5432/postgres?sslmode=disable && prisma-case-format --file prisma/schema.prisma && prisma generate",
+    "test": "node --experimental-transform-types --test 'test/**/*.test.ts'"
+  },
+  "dependencies": {
+    "@prisma/client": "^7.8.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.4.1",
+    "@electric-sql/pglite-socket": "^0.1.1",
+    "prisma": "^7.8.0",
+    "prisma-case-format": "^2.2.1"
+  }
+}

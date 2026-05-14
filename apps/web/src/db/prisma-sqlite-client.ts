@@ -1,8 +1,8 @@
-import { PrismaClient } from '@prisma/client/edge';
 import {
   SqliteWasmAdapterFactory,
   type SqliteWasmRemote,
 } from '@row-chat/prisma-sqlite-wasm-adapter';
+import { PrismaClient } from '@row-chat/sqlite-db/edge';
 import { wrap } from 'comlink';
 
 const worker = new SharedWorker(

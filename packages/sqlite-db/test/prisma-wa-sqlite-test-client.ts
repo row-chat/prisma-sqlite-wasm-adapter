@@ -1,4 +1,3 @@
-import { PrismaClient } from '@prisma/client';
 import {
   createWaSqliteRemote,
   WaSqliteAdapterFactory,
@@ -9,6 +8,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Factory } from 'wa-sqlite';
 import SQLiteAsyncModuleFactory from 'wa-sqlite/dist/wa-sqlite-async.mjs';
+import { PrismaClient } from '../prisma/generated/client/index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const migrationsDir = join(__dirname, '../migrations');
