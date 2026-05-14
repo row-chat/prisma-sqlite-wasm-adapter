@@ -3,7 +3,7 @@ import * as monaco from 'monaco-editor';
 import editorWorkerUrl from 'monaco-editor/esm/vs/editor/editor.worker?worker&url';
 import tsWorkerUrl from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker&url';
 import { useEffect, useRef, useState } from 'react';
-import replTypes from '../../../../packages/db/prisma/repl-types.d.ts?raw';
+import replTypes from '../../../../packages/sqlite-db/prisma/repl-types.d.ts?raw';
 import prisma from '../db/prisma-sqlite-client';
 import './PrismaRepl.css';
 import './repl.css';

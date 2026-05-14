@@ -17,7 +17,7 @@ A live example is deployed at [row-chat.github.io/prisma-browser-adapters](https
 
 - [`packages/prisma-sqlite-wasm-adapter`](packages/prisma-sqlite-wasm-adapter) — adapter for `@sqlite.org/sqlite-wasm`
 - [`packages/prisma-wa-sqlite-adapter`](packages/prisma-wa-sqlite-adapter) — adapter for `wa-sqlite`
-- [`packages/db`](packages/db) — shared Prisma schema, migrations, and integration tests that run both adapters against the Chinook schema
+- [`packages/sqlite-db`](packages/sqlite-db) — Prisma schema, migrations, and integration tests for the SQLite-based adapters
 - [`apps/web`](apps/web) — the demo app
 
 ## Development

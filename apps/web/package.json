@@ -17,7 +17,7 @@
     "@monaco-editor/react": "^4.7.0",
     "@prisma/client": "^7.8.0",
     "@prisma/studio-core": "^0.27.3",
-    "@row-chat/db": "*",
+    "@row-chat/sqlite-db": "*",
     "@row-chat/prisma-sqlite-wasm-adapter": "*",
     "@sqlite.org/sqlite-wasm": "^3.53.0-build1",
     "@tabler/icons-react": "^3.44.0",

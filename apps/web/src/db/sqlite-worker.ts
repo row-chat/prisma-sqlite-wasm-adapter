@@ -4,7 +4,7 @@ import sqlite3InitModule from '@sqlite.org/sqlite-wasm';
 import { expose } from 'comlink';
 
 const migrationUrls = import.meta.glob(
-  '../../../../packages/db/migrations/*.sql',
+  '../../../../packages/sqlite-db/migrations/*.sql',
   { query: '?url', eager: true },
 ) as Record<string, { default: string }>;
 

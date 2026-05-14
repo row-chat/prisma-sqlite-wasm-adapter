@@ -1,5 +1,5 @@
 {
-  "name": "@row-chat/db",
+  "name": "@row-chat/sqlite-db",
   "version": "1.0.1",
   "private": true,
   "license": "Apache-2.0",

@@ -13,8 +13,8 @@
     "build": "npm run build -w @row-chat/web",
     "lint": "eslint .",
     "typecheck": "tsc -b --noEmit",
-    "test": "npm test -w @row-chat/db",
-    "prisma:pull": "npm run prisma:pull -w @row-chat/db && npm run clear-vite-deps -w @row-chat/web"
+    "test": "npm test -w @row-chat/sqlite-db",
+    "prisma:pull": "npm run prisma:pull -w @row-chat/sqlite-db && npm run clear-vite-deps -w @row-chat/web"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
