@@ -1,0 +1,37 @@
+{
+  "name": "@row-chat/prisma-wa-sqlite-adapter",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./src/prisma-wa-sqlite-adapter.ts",
+  "types": "./src/prisma-wa-sqlite-adapter.ts",
+  "exports": {
+    ".": "./src/prisma-wa-sqlite-adapter.ts"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/prisma-wa-sqlite-adapter.js",
+    "types": "./dist/prisma-wa-sqlite-adapter.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/prisma-wa-sqlite-adapter.d.ts",
+        "import": "./dist/prisma-wa-sqlite-adapter.js"
+      }
+    }
+  },
+  "dependencies": {
+    "@prisma/driver-adapter-utils": "^7.8.0"
+  },
+  "peerDependencies": {
+    "wa-sqlite": "*"
+  }
+}
