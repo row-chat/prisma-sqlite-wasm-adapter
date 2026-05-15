@@ -1,0 +1,49 @@
+{
+  "name": "@row-chat/prisma-pglite-adapter",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/row-chat/prisma-browser-adapters.git",
+    "directory": "packages/prisma-pglite-adapter"
+  },
+  "homepage": "https://github.com/row-chat/prisma-browser-adapters/tree/main/packages/prisma-pglite-adapter#readme",
+  "bugs": {
+    "url": "https://github.com/row-chat/prisma-browser-adapters/issues"
+  },
+  "type": "module",
+  "main": "./src/prisma-pglite-adapter.ts",
+  "types": "./src/prisma-pglite-adapter.ts",
+  "exports": {
+    ".": "./src/prisma-pglite-adapter.ts",
+    "./shared-worker": "./src/prisma-pglite-shared-worker.ts"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/prisma-pglite-adapter.js",
+    "types": "./dist/prisma-pglite-adapter.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/prisma-pglite-adapter.d.ts",
+        "import": "./dist/prisma-pglite-adapter.js"
+      },
+      "./shared-worker": {
+        "types": "./dist/prisma-pglite-shared-worker.d.ts",
+        "import": "./dist/prisma-pglite-shared-worker.js"
+      }
+    }
+  },
+  "peerDependencies": {
+    "@electric-sql/pglite": "*",
+    "pglite-prisma-adapter": "^0.6.0"
+  }
+}

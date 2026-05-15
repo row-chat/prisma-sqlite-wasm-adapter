@@ -12,17 +12,21 @@
     "clear-vite-deps": "rm -rf node_modules/.vite/deps"
   },
   "dependencies": {
+    "@electric-sql/pglite": "^0.4.1",
     "@mantine/core": "^9.1.1",
     "@mantine/hooks": "^9.1.1",
     "@monaco-editor/react": "^4.7.0",
     "@prisma/client": "^7.8.0",
     "@prisma/studio-core": "^0.27.3",
-    "@row-chat/sqlite-db": "*",
+    "@row-chat/pglite-db": "*",
+    "@row-chat/prisma-pglite-adapter": "*",
     "@row-chat/prisma-sqlite-wasm-adapter": "*",
+    "@row-chat/sqlite-db": "*",
     "@sqlite.org/sqlite-wasm": "^3.53.0-build1",
     "@tabler/icons-react": "^3.44.0",
     "comlink": "^4.4.2",
     "monaco-editor": "^0.55.1",
+    "pglite-prisma-adapter": "^0.6.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },
