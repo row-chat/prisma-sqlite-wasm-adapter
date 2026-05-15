@@ -16,7 +16,7 @@
     "build": "npm run build -w @row-chat/web",
     "lint": "eslint .",
     "typecheck": "tsc -b --noEmit",
-    "test": "npm test -w @row-chat/sqlite-db",
+    "test": "(cd packages/sqlite-db && npm test) && (cd packages/pglite-db && npm test)",
     "prisma:pull": "npm run prisma:pull -w @row-chat/sqlite-db && npm run clear-vite-deps -w @row-chat/web"
   },
   "devDependencies": {

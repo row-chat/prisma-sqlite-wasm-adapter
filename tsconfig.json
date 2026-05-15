@@ -5,6 +5,7 @@
     { "path": "./packages/prisma-sqlite-wasm-adapter" },
     { "path": "./packages/prisma-wa-sqlite-adapter" },
     { "path": "./packages/prisma-pglite-adapter" },
-    { "path": "./packages/sqlite-db" }
+    { "path": "./packages/sqlite-db" },
+    { "path": "./packages/pglite-db" }
   ]
 }

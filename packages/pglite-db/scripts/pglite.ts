@@ -3,15 +3,7 @@ import { pgcrypto } from '@electric-sql/pglite/contrib/pgcrypto';
 import { uuid_ossp } from '@electric-sql/pglite/contrib/uuid_ossp';
 import fs from 'node:fs';
 
-const pglite = await PGlite.create({
-  extensions: { pgcrypto, uuid_ossp },
-});
-
 const migrationDir = `${import.meta.dirname}/../migrations`;
-const files = fs
-  .readdirSync(migrationDir)
-  .filter((f) => f.endsWith('.sql'))
-  .sort();
 
 // Strip preamble lines that the canonical Chinook PostgreSQL script ships
 // with: DROP/CREATE DATABASE manage the database lifecycle (pglite is
@@ -24,11 +16,19 @@ function stripPgliteIncompatibleStatements(sql: string): string {
     .join('\n');
 }
 
-for (const file of files) {
-  const sql = fs.readFileSync(`${migrationDir}/${file}`).toString();
-  await pglite.exec(stripPgliteIncompatibleStatements(sql));
+export async function createPglite() {
+  const pglite = await PGlite.create({
+    extensions: { pgcrypto, uuid_ossp },
+  });
+
+  const files = fs
+    .readdirSync(migrationDir)
+    .filter((f) => f.endsWith('.sql'))
+    .sort();
+  for (const file of files) {
+    const sql = fs.readFileSync(`${migrationDir}/${file}`).toString();
+    await pglite.exec(stripPgliteIncompatibleStatements(sql));
+  }
+
+  return pglite;
 }
-
-export { pglite };
-
-export default pglite;

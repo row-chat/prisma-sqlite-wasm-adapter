@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Album {
-  albumId  Int     @id @map("album_id")
+  albumId  Int     @id @default(autoincrement()) @map("album_id")
   title    String  @db.VarChar(160)
   artistId Int     @map("artist_id")
   artist   Artist  @relation(fields: [artistId], references: [artistId], onDelete: NoAction, onUpdate: NoAction)
@@ -19,7 +19,7 @@ model Album {
 }
 
 model Artist {
-  artistId Int     @id @map("artist_id")
+  artistId Int     @id @default(autoincrement()) @map("artist_id")
   name     String? @db.VarChar(120)
   album    Album[]
 
@@ -27,7 +27,7 @@ model Artist {
 }
 
 model Customer {
-  customerId   Int       @id @map("customer_id")
+  customerId   Int       @id @default(autoincrement()) @map("customer_id")
   firstName    String    @map("first_name") @db.VarChar(40)
   lastName     String    @map("last_name") @db.VarChar(20)
   company      String?   @db.VarChar(80)
@@ -48,7 +48,7 @@ model Customer {
 }
 
 model Employee {
-  employeeId    Int        @id @map("employee_id")
+  employeeId    Int        @id @default(autoincrement()) @map("employee_id")
   lastName      String     @map("last_name") @db.VarChar(20)
   firstName     String     @map("first_name") @db.VarChar(20)
   title         String?    @db.VarChar(30)
@@ -72,7 +72,7 @@ model Employee {
 }
 
 model Genre {
-  genreId Int     @id @map("genre_id")
+  genreId Int     @id @default(autoincrement()) @map("genre_id")
   name    String? @db.VarChar(120)
   track   Track[]
 
@@ -80,7 +80,7 @@ model Genre {
 }
 
 model Invoice {
-  invoiceId         Int           @id @map("invoice_id")
+  invoiceId         Int           @id @default(autoincrement()) @map("invoice_id")
   customerId        Int           @map("customer_id")
   invoiceDate       DateTime      @map("invoice_date") @db.Timestamp(6)
   billingAddress    String?       @map("billing_address") @db.VarChar(70)
@@ -97,7 +97,7 @@ model Invoice {
 }
 
 model InvoiceLine {
-  invoiceLineId Int     @id @map("invoice_line_id")
+  invoiceLineId Int     @id @default(autoincrement()) @map("invoice_line_id")
   invoiceId     Int     @map("invoice_id")
   trackId       Int     @map("track_id")
   unitPrice     Decimal @map("unit_price") @db.Decimal(10, 2)
@@ -111,7 +111,7 @@ model InvoiceLine {
 }
 
 model MediaType {
-  mediaTypeId Int     @id @map("media_type_id")
+  mediaTypeId Int     @id @default(autoincrement()) @map("media_type_id")
   name        String? @db.VarChar(120)
   track       Track[]
 
@@ -119,7 +119,7 @@ model MediaType {
 }
 
 model Playlist {
-  playlistId    Int             @id @map("playlist_id")
+  playlistId    Int             @id @default(autoincrement()) @map("playlist_id")
   name          String?         @db.VarChar(120)
   playlistTrack PlaylistTrack[]
 
@@ -139,7 +139,7 @@ model PlaylistTrack {
 }
 
 model Track {
-  trackId       Int             @id @map("track_id")
+  trackId       Int             @id @default(autoincrement()) @map("track_id")
   name          String          @db.VarChar(200)
   albumId       Int?            @map("album_id")
   mediaTypeId   Int             @map("media_type_id")

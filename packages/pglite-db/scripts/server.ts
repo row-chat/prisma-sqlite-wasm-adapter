@@ -1,6 +1,7 @@
 import { PGLiteSocketServer } from '@electric-sql/pglite-socket';
-import db from './pglite';
+import { createPglite } from './pglite';
 
+const db = await createPglite();
 const server = new PGLiteSocketServer({ db });
 await server.start();
 
